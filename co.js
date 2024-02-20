@@ -2,8 +2,13 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
 const express = require('express');
 const app = express()
+const ejs = require('ejs');
+app.set('view engine', 'ejs'); //로그인을 위한 EJS 페이지 사용
+app.set('views', './views');
 
-
+app.get('/', (req, res) => {
+    res.render('index');
+  })
 
 app.get('/1', (req, res) => 
 (async function myFunction() {
